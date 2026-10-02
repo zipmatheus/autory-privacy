@@ -7,12 +7,15 @@
   <title>Política de Privacidade — Autory</title>
   <style>
     :root { color-scheme: light dark; --blue:#1769ff; --navy:#061a40; --paper:#fff; --ink:#14213d; --muted:#596579; --line:#dce4f0; }
-    * { box-sizing: border-box; }
+    * { box-sizing:border-box; }
     body { margin:0; font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:#f6f8fc; color:var(--ink); }
     header { background:linear-gradient(135deg,var(--navy),#0b357f); color:#fff; padding:48px 20px; }
     .hero, main, footer { width:min(820px,calc(100% - 40px)); margin:auto; }
     .brand { display:flex; align-items:center; gap:14px; }
     .mark { width:52px; height:52px; border-radius:15px; display:grid; place-items:center; background:var(--blue); color:#fff; font-size:30px; font-weight:800; }
+    .language { display:flex; gap:8px; margin-top:26px; }
+    .language button { min-height:44px; border:1px solid #9ebcff; border-radius:999px; padding:8px 14px; color:#eef4ff; background:transparent; font:600 14px/1 system-ui,sans-serif; cursor:pointer; }
+    .language button[aria-pressed="true"] { background:#fff; border-color:#fff; color:var(--navy); }
     h1 { margin:18px 0 4px; font-size:clamp(30px,6vw,46px); line-height:1.15; }
     header p { margin:0; color:#cbd9fa; }
     main { background:var(--paper); margin-top:28px; margin-bottom:28px; padding:clamp(24px,5vw,48px); border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 32px #061a4012; }
@@ -22,6 +25,7 @@
     strong { color:var(--ink); }
     a { color:var(--blue); }
     .summary { padding:18px 20px; border-left:4px solid var(--blue); background:#edf3ff; border-radius:8px; }
+    [hidden] { display:none !important; }
     footer { color:var(--muted); padding:0 0 36px; text-align:center; font-size:14px; }
     @media (prefers-color-scheme:dark) {
       :root { --paper:#0b1d3d; --ink:#f1f5ff; --muted:#c1cbe0; --line:#243b65; }
@@ -34,57 +38,96 @@
 <body>
   <header>
     <div class="hero">
-      <div class="brand"><div class="mark">A</div><strong>Autory</strong></div>
-      <h1>Política de Privacidade</h1>
+      <div class="brand"><div class="mark" aria-hidden="true">A</div><strong>Autory</strong></div>
+      <h1 data-pt>Política de Privacidade</h1>
+      <h1 data-en hidden>Privacy Policy</h1>
       <p>Autory — Controle do carro</p>
+      <div class="language" role="group" aria-label="Language / Idioma">
+        <button type="button" data-language="pt" aria-pressed="true">Português</button>
+        <button type="button" data-language="en" aria-pressed="false">English</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <p><strong>Última atualização:</strong> 3 de setembro de 2026.</p>
+    <article data-pt>
+      <p><strong>Última atualização:</strong> 18 de setembro de 2026.</p>
+      <p class="summary"><strong>Resumo:</strong> os registros do Autory permanecem no aparelho. Somente a consulta opcional à Tabela FIPE usa internet, sem enviar o histórico do usuário ao desenvolvedor.</p>
+      <h2>1. Sobre esta política</h2>
+      <p>Esta Política de Privacidade explica como o aplicativo Autory trata informações relacionadas aos veículos, abastecimentos, despesas e manutenções registrados pelo usuário.</p>
+      <h2>2. Dados registrados no aplicativo</h2>
+      <p>O usuário pode inserir informações como identificação e quilometragem dos veículos, abastecimentos ou recargas, despesas, manutenções, lembretes, observações, fotos, comprovantes e notas fiscais.</p>
+      <p>Essas informações são armazenadas localmente no aparelho. O Autory não possui cadastro de usuário, login, sincronização em nuvem ou servidor próprio para receber esses registros.</p>
+      <h2>3. Coleta e compartilhamento</h2>
+      <p>O Autory não coleta nem compartilha automaticamente dados pessoais, financeiros, localização, contatos, identificadores do aparelho ou dados de uso. O aplicativo não contém anúncios, ferramentas de analytics ou rastreadores de terceiros.</p>
+      <h2>4. Fotos e documentos</h2>
+      <p>O acesso a fotos, comprovantes e documentos acontece somente quando o usuário seleciona voluntariamente um arquivo pelo seletor de documentos do Android. O Autory mantém apenas a referência necessária para exibir o arquivo escolhido e não o envia ao desenvolvedor.</p>
+      <h2>5. Notificações</h2>
+      <p>A permissão de notificações é usada exclusivamente para apresentar lembretes de manutenção configurados pelo próprio usuário no aparelho. A permissão pode ser recusada ou desativada nas configurações do Android.</p>
+      <h2>6. Consulta à Tabela FIPE</h2>
+      <p>Quando o usuário solicita uma consulta FIPE, o tipo de veículo, a marca, o modelo e o ano selecionados são enviados ao serviço independente FIPE API/Parallelum para obtenção do preço médio de referência. O fornecedor do serviço pode receber informações técnicas inerentes à conexão, como o endereço IP.</p>
+      <p>O Autory não envia nessa consulta o histórico de abastecimentos, despesas, manutenções, anexos, notas fiscais ou outros registros locais. O resultado pode ser vinculado voluntariamente a um veículo e, nesse caso, é armazenado no próprio aparelho.</p>
+      <h2>7. Relatórios, backup e restauração</h2>
+      <p>Relatórios em PDF e arquivos de backup são criados somente mediante ação do usuário e salvos no local escolhido por ele. O compartilhamento ou armazenamento externo desses arquivos fica sob controle e responsabilidade do usuário.</p>
+      <h2>8. Retenção e exclusão</h2>
+      <p>Os dados permanecem no aparelho enquanto o usuário mantiver o aplicativo e seus registros. É possível apagar registros individualmente ou usar <strong>Configurações &gt; Apagar todos os dados</strong>. Os dados também podem ser removidos pelas configurações do Android ou pela desinstalação do aplicativo.</p>
+      <p>Arquivos exportados pelo usuário, como PDFs e backups, devem ser apagados separadamente no local em que foram salvos.</p>
+      <h2>9. Privacidade de crianças</h2>
+      <p>O Autory é destinado ao controle de veículos por seus proprietários ou responsáveis e não é direcionado a crianças. O aplicativo não coleta intencionalmente informações de crianças.</p>
+      <h2>10. Segurança</h2>
+      <p>Como os dados permanecem localmente, a proteção do aparelho — incluindo bloqueio de tela, atualizações do sistema e cópias de segurança realizadas pelo usuário — contribui para a segurança das informações.</p>
+      <h2>11. Alterações desta política</h2>
+      <p>Esta política poderá ser atualizada para refletir mudanças no aplicativo ou em requisitos legais e da Google Play. A data da última atualização será indicada no início desta página.</p>
+      <h2>12. Contato</h2>
+      <p>Em caso de dúvidas, sugestões ou solicitações relacionadas à privacidade, entre em contato pelo e-mail <a href="mailto:zipmatheus@gmail.com">zipmatheus@gmail.com</a>.</p>
+    </article>
 
-    <p class="summary"><strong>Resumo:</strong> os registros do Autory permanecem no aparelho. Somente a consulta opcional à Tabela FIPE usa internet, sem enviar o histórico do usuário ao desenvolvedor.</p>
-
-    <h2>1. Sobre esta política</h2>
-    <p>Esta Política de Privacidade explica como o aplicativo Autory trata informações relacionadas aos veículos, abastecimentos, despesas e manutenções registrados pelo usuário.</p>
-
-    <h2>2. Dados registrados no aplicativo</h2>
-    <p>O usuário pode inserir informações como identificação e quilometragem dos veículos, abastecimentos ou recargas, despesas, manutenções, lembretes, observações, fotos, comprovantes e notas fiscais.</p>
-    <p>Essas informações são armazenadas localmente no aparelho. O Autory não possui cadastro de usuário, login, sincronização em nuvem ou servidor próprio para receber esses registros.</p>
-
-    <h2>3. Coleta e compartilhamento</h2>
-    <p>O Autory não coleta nem compartilha automaticamente dados pessoais, financeiros, localização, contatos, identificadores do aparelho ou dados de uso. O aplicativo não contém anúncios, ferramentas de analytics ou rastreadores de terceiros.</p>
-
-    <h2>4. Fotos e documentos</h2>
-    <p>O acesso a fotos, comprovantes e documentos acontece somente quando o usuário seleciona voluntariamente um arquivo pelo seletor de documentos do Android. O Autory mantém apenas a referência necessária para exibir o arquivo escolhido e não o envia ao desenvolvedor.</p>
-
-    <h2>5. Notificações</h2>
-    <p>A permissão de notificações é usada exclusivamente para apresentar lembretes de manutenção configurados pelo próprio usuário no aparelho. A permissão pode ser recusada ou desativada nas configurações do Android.</p>
-
-    <h2>6. Consulta à Tabela FIPE</h2>
-    <p>Quando o usuário solicita uma consulta FIPE, o tipo de veículo, a marca, o modelo e o ano selecionados são enviados ao serviço independente FIPE API/Parallelum para obtenção do preço médio de referência. O fornecedor do serviço pode receber informações técnicas inerentes à conexão, como o endereço IP.</p>
-    <p>O Autory não envia nessa consulta o histórico de abastecimentos, despesas, manutenções, anexos, notas fiscais ou outros registros locais. O resultado pode ser vinculado voluntariamente a um veículo e, nesse caso, é armazenado no próprio aparelho.</p>
-
-    <h2>7. Relatórios, backup e restauração</h2>
-    <p>Relatórios em PDF e arquivos de backup são criados somente mediante ação do usuário e salvos no local escolhido por ele. O compartilhamento ou armazenamento externo desses arquivos fica sob controle e responsabilidade do usuário.</p>
-
-    <h2>8. Retenção e exclusão</h2>
-    <p>Os dados permanecem no aparelho enquanto o usuário mantiver o aplicativo e seus registros. É possível apagar registros individualmente ou usar <strong>Configurações &gt; Apagar todos os dados</strong>. Os dados também podem ser removidos pelas configurações do Android ou pela desinstalação do aplicativo.</p>
-    <p>Arquivos exportados pelo usuário, como PDFs e backups, devem ser apagados separadamente no local em que foram salvos.</p>
-
-    <h2>9. Privacidade de crianças</h2>
-    <p>O Autory é destinado ao controle de veículos por seus proprietários ou responsáveis e não é direcionado a crianças. O aplicativo não coleta intencionalmente informações de crianças.</p>
-
-    <h2>10. Segurança</h2>
-    <p>Como os dados permanecem localmente, a proteção do aparelho — incluindo bloqueio de tela, atualizações do sistema e cópias de segurança realizadas pelo usuário — contribui para a segurança das informações.</p>
-
-    <h2>11. Alterações desta política</h2>
-    <p>Esta política poderá ser atualizada para refletir mudanças no aplicativo ou em requisitos legais e da Google Play. A data da última atualização será indicada no início desta página.</p>
-
-    <h2>12. Contato</h2>
-    <p>Em caso de dúvidas, sugestões ou solicitações relacionadas à privacidade, entre em contato pelo e-mail <a href="mailto:zipmatheus@gmail.com">zipmatheus@gmail.com</a>.</p>
+    <article data-en hidden>
+      <p><strong>Last updated:</strong> September 18, 2026.</p>
+      <p class="summary"><strong>Summary:</strong> Autory records remain on your device. Only the optional FIPE table lookup uses the internet, without sending the user's history to the developer.</p>
+      <h2>1. About this policy</h2>
+      <p>This Privacy Policy explains how the Autory app handles information related to vehicles, refuels, expenses and maintenance records entered by the user.</p>
+      <h2>2. Data entered in the app</h2>
+      <p>The user may enter information such as vehicle identification and mileage, refuels or charges, expenses, maintenance, reminders, notes, photos, receipts and invoices.</p>
+      <p>This information is stored locally on the device. Autory has no user account, login, cloud synchronization or its own server to receive these records.</p>
+      <h2>3. Collection and sharing</h2>
+      <p>Autory does not automatically collect or share personal or financial data, location, contacts, device identifiers or usage data. The app contains no ads, analytics tools or third-party trackers.</p>
+      <h2>4. Photos and documents</h2>
+      <p>Access to photos, receipts and documents occurs only when the user voluntarily selects a file through the Android document picker. Autory keeps only the reference needed to show the selected file and does not send it to the developer.</p>
+      <h2>5. Notifications</h2>
+      <p>Notification permission is used exclusively to show maintenance reminders configured by the user on their own device. Permission can be denied or disabled in Android settings.</p>
+      <h2>6. FIPE table lookup</h2>
+      <p>When the user requests a FIPE lookup, the selected vehicle type, make, model and year are sent to the independent FIPE API/Parallelum service to obtain a reference average price. The service provider may receive technical information inherent to the connection, such as an IP address.</p>
+      <p>Autory does not send refuel history, expenses, maintenance, attachments, receipts or other local records in this lookup. The result can be voluntarily linked to a vehicle and, in that case, is stored on the device itself.</p>
+      <h2>7. Reports, backup and restore</h2>
+      <p>PDF reports and backup files are created only when requested by the user and saved to a location chosen by them. Sharing or external storage of these files remains under the user's control and responsibility.</p>
+      <h2>8. Retention and deletion</h2>
+      <p>Data remains on the device while the user keeps the app and their records. Individual records can be deleted, or the user can choose <strong>Settings &gt; Delete all data</strong>. Data can also be removed through Android settings or by uninstalling the app.</p>
+      <p>Files exported by the user, such as PDFs and backups, must be deleted separately from the location where they were saved.</p>
+      <h2>9. Children's privacy</h2>
+      <p>Autory is intended for vehicle owners or responsible users and is not directed to children. The app does not intentionally collect information from children.</p>
+      <h2>10. Security</h2>
+      <p>Because data remains local, device protection — including screen lock, system updates and backups made by the user — contributes to information security.</p>
+      <h2>11. Changes to this policy</h2>
+      <p>This policy may be updated to reflect changes in the app or in legal and Google Play requirements. The date of the latest update will appear at the beginning of this page.</p>
+      <h2>12. Contact</h2>
+      <p>For questions, suggestions or privacy-related requests, contact <a href="mailto:zipmatheus@gmail.com">zipmatheus@gmail.com</a>.</p>
+    </article>
   </main>
 
-  <footer>© 2026 Autory. A história do seu carro.</footer>
+  <footer>© 2026 Autory. <span data-pt>A história do seu carro.</span><span data-en hidden>Your car's story.</span></footer>
+  <script>
+    const buttons = document.querySelectorAll('[data-language]');
+    const setLanguage = language => {
+      document.documentElement.lang = language === 'en' ? 'en' : 'pt-BR';
+      document.querySelectorAll('[data-pt]').forEach(el => el.hidden = language !== 'pt');
+      document.querySelectorAll('[data-en]').forEach(el => el.hidden = language !== 'en');
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+      try { localStorage.setItem('autory-policy-language', language); } catch (_) {}
+    };
+    const saved = (() => { try { return localStorage.getItem('autory-policy-language'); } catch (_) { return null; } })();
+    setLanguage(saved === 'en' ? 'en' : 'pt');
+    buttons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+  </script>
 </body>
 </html>
